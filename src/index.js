@@ -1,4 +1,5 @@
 import "./styles.css";
-import { greeting } from "./greeting.js";
 
-console.log(greeting);
+const search = document.querySelector(".search");
+
+search.innerHTML = "weather";
