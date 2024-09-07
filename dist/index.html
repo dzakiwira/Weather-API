@@ -6,9 +6,21 @@
     <title>Document</title>
   <script defer src="main.js"></script></head>
   <body>
-    <div class="main-container">
-      <div class="search"></div>
-      <div class="weather-data"></div>
+    <div id="main-container">
+      <div class="search">
+        <input
+          id="location-input"
+          type="text"
+          placeholder="Search..."
+          required
+        />
+        <button id="search-button">GO</button>
+      </div>
+      <div class="weather-data">
+        <div id="city-name">TORONTO</div>
+        <div id="current-temp">13</div>
+        <div>TORONTO</div>
+      </div>
     </div>
   </body>
 </html>
