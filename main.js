@@ -10,23 +10,15 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/greeting.js":
-/*!*************************!*\
-  !*** ./src/greeting.js ***!
-  \*************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   greeting: () => (/* binding */ greeting)\n/* harmony export */ });\n// greeting.js\nconst greeting = \"Hello, Odinite!\";//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvZ3JlZXRpbmcuanMiLCJtYXBwaW5ncyI6Ijs7OztBQUFBO0FBQ08sTUFBTUEsUUFBUSxHQUFHLGlCQUFpQiIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYXRoZXItYXBpLy4vc3JjL2dyZWV0aW5nLmpzPzY1NWUiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gZ3JlZXRpbmcuanNcbmV4cG9ydCBjb25zdCBncmVldGluZyA9IFwiSGVsbG8sIE9kaW5pdGUhXCI7XG4iXSwibmFtZXMiOlsiZ3JlZXRpbmciXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/greeting.js\n");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ \"./src/styles.css\");\n/* harmony import */ var _greeting_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./greeting.js */ \"./src/greeting.js\");\n\n\nconsole.log(_greeting_js__WEBPACK_IMPORTED_MODULE_1__.greeting);//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvaW5kZXguanMiLCJtYXBwaW5ncyI6Ijs7O0FBQXNCO0FBQ21CO0FBRXpDQyxPQUFPLENBQUNDLEdBQUcsQ0FBQ0Ysa0RBQVEsQ0FBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYXRoZXItYXBpLy4vc3JjL2luZGV4LmpzP2I2MzUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFwiLi9zdHlsZXMuY3NzXCI7XG5pbXBvcnQgeyBncmVldGluZyB9IGZyb20gXCIuL2dyZWV0aW5nLmpzXCI7XG5cbmNvbnNvbGUubG9nKGdyZWV0aW5nKTtcbiJdLCJuYW1lcyI6WyJncmVldGluZyIsImNvbnNvbGUiLCJsb2ciXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/index.js\n");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
+
 
 /***/ }),
 
