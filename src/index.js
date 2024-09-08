@@ -11,20 +11,18 @@ searchBtn.addEventListener("click", function () {
   getWeatherData(cityInput);
 });
 
-async function getWeatherData() {
+async function getWeatherData(city) {
   try {
     const response = await fetch(
-      "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Toronto?unitGroup=metric&key=5D4SKF7KE8J8ETEQJBJ39GNCW&contentType=json",
+      `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=5D4SKF7KE8J8ETEQJBJ39GNCW&contentType=json`,
       { mode: "cors" },
     );
-
     const weatherJSON = await response.json();
 
     cityName.innerHTML = weatherJSON.resolvedAddress;
     currentTemp.innerHTML = weatherJSON.currentConditions.temp;
     feelsLike.innerHTML = weatherJSON.currentConditions.feelslike;
   } catch (err) {
-    console.log(err);
     return alert("Oh no! Please input a real city");
   }
 }
