@@ -49,7 +49,6 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  cursor: pointer;
 }
 
 #search-button {
@@ -81,5 +80,18 @@ body {
 .weather-data {
   position: absolute;
   bottom: 50%;
-  color: #6e6d70;
+  color: #ffffff;
+}
+
+#city-name {
+  font-size: 170%;
+}
+
+#current-temp {
+  font-size: 450%;
+  font-weight: bold;
+}
+
+#feels-like {
+  font-size: 100%;
 }
