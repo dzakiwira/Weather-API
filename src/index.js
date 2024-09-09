@@ -3,12 +3,19 @@ import "./styles.css";
 const cityName = document.querySelector("#cityName");
 const currentTemp = document.querySelector("#current-temp");
 const feelsLike = document.querySelector("#feels-like");
-const searchBtn = document.querySelector("#search-button");
+const cityForm = document.querySelector("#myForm");
 
-searchBtn.addEventListener("click", function () {
-  const cityInput = document.querySelector("#location-input").value;
-  console.log(cityInput);
-  getWeatherData(cityInput);
+cityForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const userCity = document.querySelector("#location-input");
+
+  if (userCity.value == "") {
+    userCity.setCustomValidity("Make sure to input a City");
+  } else {
+    // perform operation with form input
+    console.log(userCity.value);
+  }
 });
 
 async function getWeatherData(city) {
@@ -22,7 +29,8 @@ async function getWeatherData(city) {
     cityName.innerHTML = weatherJSON.resolvedAddress;
     currentTemp.innerHTML = weatherJSON.currentConditions.temp;
     feelsLike.innerHTML = weatherJSON.currentConditions.feelslike;
-  } catch (err) {
-    return alert("Oh no! Please input a real city");
+  } catch (error) {
+    console.error(error);
+    // return alert("Oh no! Please input a real city");
   }
 }
