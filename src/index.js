@@ -1,8 +1,8 @@
 import "./styles.css";
 
-const cityName = document.querySelector("#cityName");
+const cityName = document.querySelector("#city-name");
 const currentTemp = document.querySelector("#current-temp");
-const feelsLike = document.querySelector("#feels-like");
+const conditions = document.querySelector("#feels-like");
 const cityForm = document.querySelector("#myForm");
 
 cityForm.addEventListener("submit", (e) => {
@@ -15,9 +15,11 @@ cityForm.addEventListener("submit", (e) => {
   } else {
     // perform operation with form input
     console.log(userCity.value);
+    getWeatherData(userCity.value);
   }
 });
 
+// fetch data and await info before updating
 async function getWeatherData(city) {
   try {
     const response = await fetch(
@@ -25,12 +27,14 @@ async function getWeatherData(city) {
       { mode: "cors" },
     );
     const weatherJSON = await response.json();
-
+    // update divs with newly aquired data
     cityName.innerHTML = weatherJSON.resolvedAddress;
-    currentTemp.innerHTML = weatherJSON.currentConditions.temp;
-    feelsLike.innerHTML = weatherJSON.currentConditions.feelslike;
+    currentTemp.innerHTML =
+      Math.round(weatherJSON.currentConditions.temp) + "\u00B0";
+    conditions.innerHTML = weatherJSON.currentConditions.conditions;
+    // catch errors and display in console
   } catch (error) {
     console.error(error);
-    // return alert("Oh no! Please input a real city");
+    return alert("Oh no! Please input another city");
   }
 }
