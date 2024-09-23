@@ -35,3 +35,13 @@ async function getWeatherData(city) {
     return alert("Oh no! Please input another city");
   }
 }
+
+// extract data and return obj
+function parseData(data) {
+  let currentCityInfo = {
+    city: data.resolvedAddress,
+    temp: Math.round(data.currentConditions.temp) + "\u00B0",
+    conditions: data.currentConditions.conditions,
+  };
+  return { currentCityInfo };
+}
