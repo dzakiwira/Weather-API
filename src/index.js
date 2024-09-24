@@ -25,6 +25,7 @@ async function getWeatherData(city) {
       { mode: "cors" },
     );
     const weatherJSON = await response.json();
+    parseData(weatherJSON);
 
     cityName.innerHTML = weatherJSON.resolvedAddress;
     currentTemp.innerHTML =
@@ -38,6 +39,7 @@ async function getWeatherData(city) {
 
 // extract data and return obj
 function parseData(data) {
+  console.log(data);
   let currentCityInfo = {
     city: data.resolvedAddress,
     temp: Math.round(data.currentConditions.temp) + "\u00B0",
