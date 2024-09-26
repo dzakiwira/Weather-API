@@ -25,12 +25,11 @@ async function getWeatherData(city) {
       { mode: "cors" },
     );
     const weatherJSON = await response.json();
-    parseData(weatherJSON);
+    let data = parseData(weatherJSON);
 
-    cityName.innerHTML = weatherJSON.resolvedAddress;
-    currentTemp.innerHTML =
-      Math.round(weatherJSON.currentConditions.temp) + "\u00B0";
-    conditions.innerHTML = weatherJSON.currentConditions.conditions;
+    cityName.innerHTML = data.currentCityInfo.city;
+    currentTemp.innerHTML = data.currentCityInfo.temp;
+    conditions.innerHTML = data.currentCityInfo.conditions;
   } catch (error) {
     console.error(error);
     return alert("Oh no! Please input another city");
