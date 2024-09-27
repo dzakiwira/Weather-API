@@ -1,19 +1,14 @@
 import "./styles.css";
 
-const cityName = document.querySelector("#city-name");
-const currentTemp = document.querySelector("#current-temp");
-const conditions = document.querySelector("#feels-like");
 const cityForm = document.querySelector("#myForm");
 
 cityForm.addEventListener("submit", (e) => {
   e.preventDefault();
-
   const userCity = document.querySelector("#location-input");
 
   if (userCity.value == "") {
     userCity.setCustomValidity("Make sure to input a City");
   } else {
-    console.log(userCity.value);
     getWeatherData(userCity.value);
   }
 });
@@ -26,10 +21,7 @@ async function getWeatherData(city) {
     );
     const weatherJSON = await response.json();
     let data = parseData(weatherJSON);
-
-    cityName.innerHTML = data.currentCityInfo.city;
-    currentTemp.innerHTML = data.currentCityInfo.temp;
-    conditions.innerHTML = data.currentCityInfo.conditions;
+    updateInfo(data);
   } catch (error) {
     console.error(error);
     return alert("Oh no! Please input another city");
@@ -38,7 +30,6 @@ async function getWeatherData(city) {
 
 // extract data and return obj
 function parseData(data) {
-  console.log(data);
   let currentCityInfo = {
     city: data.resolvedAddress,
     temp: Math.round(data.currentConditions.temp) + "\u00B0",
@@ -47,9 +38,12 @@ function parseData(data) {
   return { currentCityInfo };
 }
 
-function updateInfo(cityData) {
-  let data = cityData;
-  cityName.innerHTML = data.currentCityInfo.city;
-  currentTemp.innerHTML = data.currentCityInfo.temp;
-  conditions.innerHTML = data.currentCityInfo.conditions;
+function updateInfo(parsedData) {
+  const cityName = document.querySelector("#city-name");
+  const currentTemp = document.querySelector("#current-temp");
+  const conditions = document.querySelector("#feels-like");
+
+  cityName.innerHTML = parsedData.currentCityInfo.city;
+  currentTemp.innerHTML = parsedData.currentCityInfo.temp;
+  conditions.innerHTML = parsedData.currentCityInfo.conditions;
 }
