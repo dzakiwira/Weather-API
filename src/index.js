@@ -46,3 +46,10 @@ function parseData(data) {
   };
   return { currentCityInfo };
 }
+
+function updateInfo(cityData) {
+  let data = cityData;
+  cityName.innerHTML = data.currentCityInfo.city;
+  currentTemp.innerHTML = data.currentCityInfo.temp;
+  conditions.innerHTML = data.currentCityInfo.conditions;
+}
