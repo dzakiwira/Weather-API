@@ -1,18 +1,5 @@
 import "./styles.css";
 
-const cityForm = document.querySelector("#myForm");
-
-cityForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const userCity = document.querySelector("#location-input");
-
-  if (userCity.value == "") {
-    userCity.setCustomValidity("Make sure to input a City");
-  } else {
-    getWeatherData(userCity.value);
-  }
-});
-
 async function getWeatherData(city) {
   try {
     const response = await fetch(
@@ -28,7 +15,6 @@ async function getWeatherData(city) {
   }
 }
 
-// extract data and return obj
 function parseData(data) {
   let currentCityInfo = {
     city: data.resolvedAddress,
@@ -47,3 +33,16 @@ function updateInfo(parsedData) {
   currentTemp.innerHTML = parsedData.currentCityInfo.temp;
   conditions.innerHTML = parsedData.currentCityInfo.conditions;
 }
+
+const cityForm = document.querySelector("#myForm");
+
+cityForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const userCity = document.querySelector("#location-input");
+
+  if (userCity.value == "") {
+    userCity.setCustomValidity("Make sure to input a City");
+  } else {
+    getWeatherData(userCity.value);
+  }
+});
